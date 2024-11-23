@@ -1,0 +1,118 @@
+1. Máquina virtual (VM)
+
+Uma máquina virtual é um computador "virtual" dentro de um computador real. Ela compartilha os recursos físicos do hardware do host, 
+como CPU, memória e armazenamento, mas opera de forma independente.
+Por exemplo, você pode ter uma máquina física executando Windows, mas rodar uma máquina virtual com Linux sem interferência mútua.
+
+Características Principais
+1. Isolamento: Cada VM é separada e isolada das outras, o que significa que falhas ou problemas em uma não afetam as outras ou o host.
+2. Multiuso: Você pode executar múltiplas VMs no mesmo hardware, o que é útil para testes, desenvolvimento ou executar diferentes 
+sistemas operacionais simultaneamente.
+
+Softwares de VM: VirtualBox
+
+
+2. Debian e Rocky 
+
+Debian e Rocky Linux são ambos sistemas operacionais baseados em Linux, frequentemente utilizados em ambientes de máquinas virtuais (VMs). 
+Eles desempenham um papel essencial ao fornecer a camada de software que controla o hardware virtual da máquina e permite que outras 
+aplicações sejam executadas de forma eficiente.
+Quando você cria uma máquina virtual, precisa instalar um sistema operacional dentro dela, assim como em um computador físico. 
+Oferecem ferramentas para gerenciar serviços de rede, segurança e atualizações.
+
+2.1. Debian
+Ideal para servidores que precisam de estabilidade a longo prazo. Amplamente usado para servidores web, bancos de dados, e serviços de rede.
+Debian é famoso por ser extremamente estável e seguro, com atualizações que priorizam a confiabilidade.
+Mantido por uma vasta comunidade global de voluntários.
+
+2.2.Rocky
+Focado no mercado corporativo e em servidores de produção que requerem suporte a longo prazo e alta compatibilidade com soluções empresariais.
+Mantido por uma comunidade corporativa, com foco em oferecer suporte robusto para empresas.
+
+3. Aptitude, APT e AppArmor
+
+Se você estiver configurando uma máquina virtual com Debian ou Ubuntu, você pode usar APT ou Aptitude para instalar pacotes essenciais e, 
+em seguida, configurar AppArmor para proteger serviços críticos.
+
+3.1. APT (Advanced Package Tool)
+APT é o principal sistema de gerenciamento de pacotes usado em Linux baseadas em Debian. Ele simplifica o processo de instalação, atualização 
+e remoção de software. Mais simples e direto; ideal para tarefas rápidas e scripts automatizados.
+
+3.2. Aptitude
+Aptitude é um gerenciador de pacotes mais avançado e interativo. Ele é considerado uma interface mais amigável e poderosa para o APT.
+Melhor para usuários que preferem uma interface mais robusta, onde podem pesquisar, navegar e ter mais controle sobre as opções de instalação 
+e remoção.
+
+3.3. AppArmor
+Ele é uma camada de segurança adicional, útil para proteger o sistema contra ameaças e comportamentos maliciosos.
+Ele aplica políticas de segurança que definem o que cada programa é ou não permitido fazer.
+AppArmor usa perfis para controlar o acesso. Perfis podem ser criados para aplicativos específicos, definindo suas permissões.
+
+Resumindo as Diferenças
+APT é um gerenciador de pacotes simples e direto.
+Aptitude é uma ferramenta mais avançada e interativa para gerenciar pacotes, útil para casos mais complexos.
+AppArmor é uma ferramenta de segurança que protege aplicativos, limitando suas permissões para melhorar a segurança do sistema.
+
+4. UFW e SSH
+
+4.1. UFW
+UFW (Uncomplicated Firewall) é uma ferramenta simplificada para gerenciar um firewall no Linux. Ele serve para proteger o sistema controlando 
+quais conexões de rede são permitidas ou bloqueadas.
+Ele ajuda a proteger o sistema de tentativas de intrusão, configurando quais conexões externas podem acessar o sistema.
+
+4.2. SSH
+SSH (Secure Shell) é um protocolo de rede que permite a comunicação segura entre dois computadores. É amplamente usado para acessar e gerenciar
+servidores de forma remota.
+Normalmente feita usando um par de chaves (pública e privada) ou senhas. Chaves SSH são muito seguras e preferíveis em ambientes de produção. 
+SSH usa a porta 22 por padrão.
+
+Diferença e Relação entre UFW e SSH
+UFW: Ajuda a proteger a porta SSH limitando quais IPs podem se conectar ou desabilitando a porta SSH completamente quando não for necessária.
+SSH: Usa a porta 22 para permitir o acesso remoto ao servidor, mas se a porta estiver bloqueada pelo firewall (UFW), a conexão não poderá ser 
+estabelecida.
+
+5. LVM
+LVM é uma tecnologia de gerenciamento de volumes no Linux que oferece flexibilidade ao particionar discos. Em vez de dividir fisicamente o disco 
+em partições fixas, se você tem um servidor ou um sistema com necessidades de armazenamento complexas, o LVM oferece uma maneira mais flexível 
+de gerenciar o espaço em disco.
+Permite que você ajuste o tamanho dos volumes sem reformatação, mova dados entre discos, e expanda o espaço de armazenamento de forma dinâmica.
+
+Vantagens:
+Partições facilitam o backup de seções específicas de sua VM. Você pode, por exemplo, fazer backup apenas da partição /home ou de uma partição 
+onde estão armazenados dados críticos, sem precisar clonar a máquina inteira.
+Certas partições, como swap, podem ser configuradas para otimizar o desempenho da máquina virtual. O swap pode atuar como uma extensão da RAM, 
+útil quando a memória física está sobrecarregada.
+Se sua partição /var (onde logs são armazenados) começar a encher, você pode facilmente redimensioná-la sem mexer nas outras partições.
+
+Exemplo de Estrutura de Partição:
+/ (root): Partição principal onde o sistema operacional é instalado.
+/home: Partição para dados do usuário, como documentos e arquivos pessoais.
+/var: Partição para arquivos que mudam frequentemente, como logs do sistema e bancos de dados.
+/tmp: Partição temporária, útil para melhorar a segurança e o desempenho.
+swap: Uma partição de swap que age como memória virtual.
+
+6.sudo
+sudo (abreviação de "superuser do") é um comando em sistemas Linux e Unix que permite a usuários executarem tarefas com privilégios de 
+administrador (root) de forma segura e controlada. 
+Permite gerenciar quem pode executar quais comandos como administrador, aumentando a segurança.
+Comandos executados com sudo são registrados, ajudando no monitoramento e na prevenção de uso indevido.
+
+7. Script de Monitoring
+Um script de monitoring é um programa que verifica periodicamente o status ou a performance de um sistema, serviço ou aplicativo. 
+Ele é usado para garantir que tudo esteja funcionando corretamente, identificar problemas de desempenho ou detectar falhas antes que 
+causem grandes problemas.
+
+7.1 CRON
+CRON é um agendador de tarefas que executa comandos ou scripts automaticamente em intervalos de tempo definidos. Ele é essencial para 
+tarefas de automação, como executar scripts de backup, rodar scripts de monitoring ou enviar relatórios periódicos.
+
+7.1.1 Crontab
+É o arquivo de configuração do CRON, onde você define quando e o que será executado. Cada linha no crontab especifica uma tarefa programada.
+Sintaxe: A sintaxe do crontab usa cinco campos para definir o horário de execução:
+Minuto (0-59)
+Hora (0-23)
+Dia do mês (1-31)
+Mês (1-12)
+Dia da semana (0-6, onde 0 é domingo)
+
+*/10 * * * * /home/user/monitoring.sh Executa monitoring.sh a cada 10 minutos.
