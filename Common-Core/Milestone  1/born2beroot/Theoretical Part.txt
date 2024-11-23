@@ -1,0 +1,92 @@
+1. Virtual Machine (VM)
+A virtual machine (VM) is a "virtual" computer within a real computer. It shares the physical resources of the host hardware, such as CPU, memory, and storage, but operates independently. 
+For example, you can have a physical machine running Windows, but run a virtual machine with Linux without mutual interference.
+
+Main Features
+a. Isolation: Each VM is separate and isolated from others, meaning that failures or issues in one do not affect the others or the host.
+b. Multiuse: You can run multiple VMs on the same hardware, which is useful for testing, development, or running different operating systems simultaneously.
+VM Software: VirtualBox
+
+
+2. Debian and Rocky
+Debian and Rocky Linux are both Linux-based operating systems often used in virtual machine (VM) environments. 
+They play a crucial role by providing the software layer that controls the virtual hardware of the machine and enables other applications to run efficiently. 
+When you create a virtual machine, you need to install an operating system in it, just like on a physical computer. They provide tools to manage network services, security, and updates.
+
+2.1. Debian Ideal for servers that require long-term stability. Widely used for web servers, databases, and network services. 
+Debian is known for being extremely stable and secure, with updates prioritizing reliability. Maintained by a vast global community of volunteers.
+
+2.2. Rocky Focused on the corporate market and production servers that require long-term support and high compatibility with enterprise solutions. 
+Maintained by a corporate community, aiming to provide robust support for businesses.
+
+
+3. Aptitude, APT, and AppArmor
+If you are setting up a virtual machine with Debian or Ubuntu, you can use APT or Aptitude to install essential packages and then configure AppArmor to protect critical services.
+
+3.1. APT (Advanced Package Tool) APT is the primary package management system used in Debian-based Linux distributions. It simplifies the process of installing, updating, and removing software. 
+Simpler and more straightforward; ideal for quick tasks and automated scripts.
+
+3.2. Aptitude Aptitude is a more advanced and interactive package manager. It is considered a more user-friendly and powerful interface for APT. 
+Better for users who prefer a more robust interface where they can search, browse, and have more control over installation and removal options.
+
+3.3. AppArmor It is an additional security layer, useful for protecting the system from threats and malicious behaviors. 
+It enforces security policies that define what each program is allowed or not allowed to do. AppArmor uses profiles to control access. 
+Profiles can be created for specific applications, defining their permissions.
+
+Summary of Differences:
+APT is a simple and direct package manager.
+Aptitude is a more advanced and interactive tool for managing packages, useful for more complex cases.
+AppArmor is a security tool that protects applications by limiting their permissions to improve system security.
+
+
+4.UFW and SSH
+4.1. UFW UFW (Uncomplicated Firewall) is a simplified tool for managing a firewall in Linux. It helps protect the system by controlling which network connections are allowed or blocked. 
+It helps protect the system from intrusion attempts by configuring which external connections can access the system.
+
+4.2. SSH SSH (Secure Shell) is a network protocol that allows secure communication between two computers. It is widely used to access and manage servers remotely. 
+Typically done using a pair of keys (public and private) or passwords. SSH keys are much more secure and preferred in production environments. SSH uses port 22 by default.
+
+Difference and Relationship between UFW and SSH
+a. UFW helps protect the SSH port by limiting which IPs can connect or disabling the SSH port completely when not needed.
+b. SSH uses port 22 to allow remote access to the server, but if the port is blocked by the firewall (UFW), the connection cannot be established.
+
+
+5.LVM 
+LVM (Logical Volume Management) is a disk volume management technology in Linux that provides flexibility when partitioning disks. 
+Instead of dividing the disk into fixed partitions, LVM allows you to manage disk space more flexibly. It enables you to resize volumes without reformatting, move data between disks, 
+and dynamically expand storage space.
+
+Advantages:
+Partitions facilitate the backup of specific sections of your VM. For example, you can back up only the /home partition or a partition where critical data is stored, 
+without needing to clone the entire machine.
+Certain partitions, such as swap, can be configured to optimize the performance of the virtual machine. Swap can act as an extension of RAM, useful when physical memory is overloaded.
+If your /var partition (where logs are stored) starts to fill up, you can easily resize it without touching the other partitions.
+
+Example Partition Structure:
+/ (root): Main partition where the operating system is installed.
+/home: Partition for user data, such as documents and personal files.
+/var: Partition for frequently changing files, like system logs and databases.
+/tmp: Temporary partition, useful for improving security and performance.
+swap: A swap partition that acts as virtual memory.
+
+
+6. sudo 
+sudo (short for "superuser do") is a command in Linux and Unix systems that allows users to execute tasks with administrator (root) privileges in a secure and controlled way. 
+It helps manage who can execute which commands as an administrator, increasing security. Commands run with sudo are logged, aiding in monitoring and preventing misuse.
+
+
+7. Monitoring Script A monitoring script is a program that periodically checks the status or performance of a system, service, or application. 
+It is used to ensure that everything is functioning properly, identify performance issues, or detect failures before they cause major problems.
+
+7.1 CRON CRON is a task scheduler that automatically runs commands or scripts at defined time intervals. It is essential for automation tasks, such as running backup scripts,
+monitoring scripts, or sending periodic reports.
+
+7.1.1 Crontab The crontab is the configuration file for CRON, where you define when and what will be executed. Each line in the crontab specifies a scheduled task. 
+Syntax: The crontab syntax uses five fields to define the execution time:
+Minute (0-59)
+Hour (0-23)
+Day of the month (1-31)
+Month (1-12)
+Day of the week (0-6, where 0 is Sunday)
+
+For example: */10 * * * * /home/user/monitoring.sh – Executes monitoring.sh every 10 minutes.
