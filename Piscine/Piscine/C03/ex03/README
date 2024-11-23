@@ -1,0 +1,5 @@
+E semelhante a strcat, mas mais segura, pois permite limitar o número de caracteres da string que sera concatenado (adicionado), ajudando a prevenir erros. 
+Então essa função adiciona a uma string ate n caracteres de outra string.
+
+Estrutura: strncat (dest, src, n)
+             char * strncat (char * dest, char *src, ansigned int n)
