@@ -34,8 +34,8 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    int target_pid = atoi(argv[1]);
-    if (target_pid <= 0)
+    int receiver_pid = atoi(argv[1]);
+    if (receiver_pid <= 0)
     {
         ft_printf("Invalid PID\n");
         return 1;
@@ -46,6 +46,6 @@ int main(int argc, char **argv)
         return 1;
     }
     
-    send_message(target_pid, argv[2]);
+    send_message(receiver_pid, argv[2]);
     return 0;
 }
