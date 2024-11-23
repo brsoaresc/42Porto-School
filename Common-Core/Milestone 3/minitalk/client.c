@@ -1,46 +1,51 @@
 #include <signal.h>
 #include "libft/libft.h"
 
-void send_bit(int pid, unsigned char c)
+void send_bit(int target_pid, unsigned char ch)
 {
-    int shift = 7;
-    while (shift >= 0)
+    int bit_position = 7;
+    while (bit_position >= 0)
     {
-        if ((c >> shift) & 1)
-            kill(pid, SIGUSR2);
+        if ((ch >> bit_position) & 1)
+            kill(target_pid, SIGUSR2);
         else
-            kill(pid, SIGUSR1);
+            kill(target_pid, SIGUSR1);
         usleep(300);
-        shift--;
+        bit_position--;
     }
 }
 
-void send_message(int pid, const char *str)
+void send_message(int target_pid, const char *str)
 {
     size_t i = 0;
     while (str[i])
     {
-        send_bit(pid, str[i]);
+        send_bit(target_pid, str[i]);
         i++;
     }
-    send_bit(pid, '\0'); // Envia caractere nulo
+    send_bit(target_pid, '\0');
 }
 
 int main(int argc, char **argv)
 {
     if (argc != 3)
     {
-        printf("Usage: ./client <server_pid> <message>\n");
+        ft_printf("Usage: ./client <server_pid> <message>\n");
         return 1;
     }
 
-    int pid = atoi(argv[1]);
-    if (pid <= 0)
+    int target_pid = atoi(argv[1]);
+    if (target_pid <= 0)
     {
-        printf("Invalid PID\n");
+        ft_printf("Invalid PID\n");
         return 1;
     }
-
-    send_message(pid, argv[2]);
+    if (argv[2] == NULL || argv[2][0] == '\0')
+    {
+        ft_printf("Error: Message cannot be null or empty\n");
+        return 1;
+    }
+    
+    send_message(target_pid, argv[2]);
     return 0;
 }
