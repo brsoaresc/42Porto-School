@@ -6,7 +6,7 @@
 
 ###
 
-<h2 align="left">Project Description::</h2>
+<h2 align="left">Project Description:</h2>
 
 ###
 
@@ -14,7 +14,7 @@
 
 ###
 
-<h3 align="left">How It Works</h3>
+<h3 align="left">How It Works:</h3>
 
 ###
 
@@ -22,7 +22,7 @@
 
 ###
 
-<h3 align="left">How to Implement::</h3>
+<h3 align="left">How to Implement:</h3>
 
 ###
 
