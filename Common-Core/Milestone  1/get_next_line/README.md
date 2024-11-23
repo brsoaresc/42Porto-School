@@ -14,7 +14,7 @@
 
 ###
 
-<h3 align="left">Como Funciona</h3>
+<h3 align="left">How It Works</h3>
 
 ###
 
