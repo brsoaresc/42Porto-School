@@ -1,0 +1,7 @@
+É a funcao que copia uma string de forma mais segura(limpa).
+Ela garante que a copia nao ultrapasse o tamanho do destino e o resultado seja sempre uma string terminada com \0,
+mesmo que a origem seja maior do que o destino.
+
+Estrutura: strlcpy (dest, scr, sizeof(dest))
+           unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+

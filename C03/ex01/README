@@ -1,0 +1,4 @@
+E semelhante a função strcmp, com a diferença que compara apenas ate determinado n° de caracteres, comecando da posião O.
+
+Estrutura: strncmp ( str1, str2, nº)
+           int strncmp (char *str1, char * str2, unsigned int n)

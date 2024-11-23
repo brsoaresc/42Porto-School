@@ -1,0 +1,7 @@
+A funcao significa ASCII to integer, e usada para converter uma string de caracteres que representam um numero em um inteiro,
+ela pega uma seguencia de caracteres com "123" e transforma isso em numeros inteiros 123.
+A funcao ATOI percorre a string caracter por caracter. Se a string contiver caracteres nao numericos antes do numero,
+a funcao retorna 0. Se houver outros caracteres  apos o numero eles sao ignorados.
+
+EX 123:  Primeiro pega o caracter 1 (converte para 1), multiplica por 1 por 10, e adiciona o proximo digito, que e 2 
+(entao fica 12), multiplica 12 por 10, e adiciona o proximo digito, que e 3 (entao fica 123).

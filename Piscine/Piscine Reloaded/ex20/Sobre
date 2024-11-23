@@ -1,0 +1,6 @@
+A função strdup (string duplicate) é utilizada para criar uma cópia de uma string fornecida. 
+A função aloca memória dinamicamente para armazenar a nova string (a cópia), de forma que a original e a duplicata possam ser manipuladas independentemente.
+A função utiliza malloc para alocar memória suficiente para a nova string, incluindo o caractere nulo \0.
+E utiliza a função strcpy para copiar o conteúdo da string original para a nova área de memória alocada.
+
+Estrutura: char	*ft_strdup (char *src)

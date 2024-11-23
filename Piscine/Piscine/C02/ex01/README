@@ -1,0 +1,6 @@
+Tem a mesma função da strcpy, mas permite limiar o numero de caracteres que seram compilados. 
+Isso evita erros como o estouro de buffer (qundo capia mais que o espaço permite). 
+
+Estrutura: strncpy (dest, src, size_t)
+           char	*ft_strncpy(char *dest, char *src, unsigned int n)
+

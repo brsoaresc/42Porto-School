@@ -1,0 +1,6 @@
+A função strcpy, significa string copy, é usada para copiar uma string de um lugar para outro na memoria.
+Percorre a string de oringem caracter por caracter, começando do primeiro até encontrar o fim da string \0 (nulo).
+
+Estrutura: strcpy (dest, src)
+           char	*ft_strcpy(char *dest, char *src)
+
