@@ -2,7 +2,13 @@
 
 ###
 
-<p align="left">This project aims to configure and manage a Linux server in a simple way, while following best practices for security and system administration. It serves as an introduction to the world of server administration and involves several essential tasks for those who want to understand how to configure, manage, and secure a Linux operating system in a production environment.</p>
+<h2 align="left">Creating the VM</h2>
+
+###
+
+<br clear="both">
+
+<p align="left">When following the guide, create the VM with 8GB instead of 12GB as mentioned; this way, the partitions will have the correct size shown in the subject screenshot, avoiding issues.<br><br>*Guide: https://github.com/gemartin99/Born2beroot-Tutorial.git<br>https://github.com/curtyraissa/born2beroot.git</p>
 
 ###
 
