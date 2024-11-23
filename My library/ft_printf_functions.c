@@ -39,9 +39,9 @@ int	printf_putptr(unsigned long ptr)
 
 	len = 0;
 	if (!ptr)
-		return (ft_putstr("(nil)"));
-	len += ft_putstr("0x");
-	len += ft_address(ptr);
+		return (printf_putstr("(nil)"));
+	len += printf_putstr("0x");
+	len += printf_address(ptr);
 	return (len);
 }
 
@@ -53,7 +53,7 @@ int	printf_address(unsigned long addr)
 	i = 0;
 	base = "0123456789abcdef";
 	if (addr >= 16)
-		i += ft_address(addr / 16);
-	i += ft_putchar(base[addr % 16]);
+		i += printf_address(addr / 16);
+	i += printf_putchar(base[addr % 16]);
 	return (i);
 }
