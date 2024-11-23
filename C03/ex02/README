@@ -1,5 +1,0 @@
-A função strcat e usada para concatenar (juntar) duas strings, ou seja adicionar o contendo de uma string no final da outra.
-A strcat modifica diretamente dest, anexando src ao seu final, mas src continua com conteudo inalterado.
-
-Estrutura: strcat (dest, src) 
-           char * strcat (char * dest, char *src)

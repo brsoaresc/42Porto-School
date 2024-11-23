@@ -1,8 +1,0 @@
-É uma função usada para localizar uma substring dentro de uma string maior. Haystack é o nome da string principal onde 
-desejo fazer a busca, needle é a substring que você diseja encontrar dentro de haystrack.
-A função percorre a string haystack procurando pela substring needle, quando encontra a primera ocorrencia de needle dentro 
-de haystark, retorna um ponteiro para o inicio dessa ocorrencia. Se não encontra needle, retorna NULL.
-Assim imprime a substring encontrada a partir da posição onde needle começa dentro de haystack.
-
-Estrutura: strstr (str, to_find)
-           char *strstr (char *str, char *to_find)

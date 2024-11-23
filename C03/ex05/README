@@ -1,8 +1,0 @@
-É a versão mais moderna e ainda mais segura da função strcat, evita que o programa escreva alem dos limites da memoria reservada.
-1. Calcula o comprimento atual de dest e src.
-2. Adiciona o conteudo de src ao final de dest, mas só ate o tamanho especificado.
-3. Garante o cararter \0 no final de dest se houver espaço.
-4. Verifica se o tamanho total (dest + src) for maior ou igual ao n, entao a função corta a copia para se ajustar ao espaço disponivel e coloca \O.
-
-Estrutura: strlcat (dest, src, n)
-             unsigned int (char *dest, char *src, insigned int size)
