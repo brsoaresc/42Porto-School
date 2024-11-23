@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-int	ft_putchar(char ch)
+int	printf_putchar(char ch)
 {
 	write(1, &ch, 1);
 	return (1);
 }
 
-int	ft_putstr(char *str)
+int	printf_putstr(char *str)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int	ft_putptr(unsigned long ptr)
+int	printf_putptr(unsigned long ptr)
 {
 	int	len;
 
@@ -45,7 +45,7 @@ int	ft_putptr(unsigned long ptr)
 	return (len);
 }
 
-int	ft_address(unsigned long addr)
+int	printf_address(unsigned long addr)
 {
 	int		i;
 	char	*base;
