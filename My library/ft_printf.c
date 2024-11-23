@@ -15,21 +15,21 @@
 int	put_placeholder(char type, va_list args)
 {
 	if (type == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		return (printf_putchar(va_arg(args, int)));
 	if (type == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		return (printf_putstr(va_arg(args, char *)));
 	if (type == 'p')
-		return (ft_putptr(va_arg(args, unsigned long)));
+		return (printf_putptr(va_arg(args, unsigned long)));
 	if (type == 'd' || type == 'i')
-		return (ft_putnbr(va_arg(args, int)));
+		return (printf_putnbr(va_arg(args, int)));
 	if (type == 'u')
-		return (ft_putnbr_unsigned(va_arg(args, unsigned int)));
+		return (printf_putnbr_unsigned(va_arg(args, unsigned int)));
 	if (type == 'x')
-		return (ft_putnbr_hex(va_arg(args, unsigned int), 1));
+		return (printf_putnbr_hex(va_arg(args, unsigned int), 1));
 	if (type == 'X')
-		return (ft_putnbr_hex(va_arg(args, unsigned int), 0));
+		return (printf_putnbr_hex(va_arg(args, unsigned int), 0));
 	if (type == '%')
-		return (ft_putchar('%'));
+		return (printf_putchar('%'));
 	return (0);
 }
 
@@ -47,7 +47,7 @@ int	ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] != '%')
-			result += ft_putchar(str[i]);
+			result += printf_putchar(str[i]);
 		else if (!str[++i])
 			return (-1);
 		else
