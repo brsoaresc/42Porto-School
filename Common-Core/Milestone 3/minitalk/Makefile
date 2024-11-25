@@ -14,10 +14,6 @@ RM		= rm -f
 
 all:		$(LIBFT) $(SERVER) $(CLIENT)
 
-server:		$(LIBFT) $(SERVER)
-
-client:		$(LIBFT) $(CLIENT)
-
 $(LIBFT):
 		@$(MAKE) -C $(LIBFT_DIR)
 
