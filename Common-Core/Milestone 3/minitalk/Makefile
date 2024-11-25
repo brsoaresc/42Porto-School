@@ -1,9 +1,12 @@
 NAME_CLIENT = client
 NAME_SERVER = server
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
+
 SRC_CLIENT = client.c
 SRC_SERVER = server.c
 OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
