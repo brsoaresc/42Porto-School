@@ -11,52 +11,47 @@
 /* ************************************************************************** */
 
 #include <signal.h>
+#include <unistd.h>
 #include "libft/libft.h"
 
-void	send_char(int target_pid, char *message)
+void	handle_signal(int signal, siginfo_t *info, void *context)
 {
-	int	i;
-	int	bit;
+	static int bit = 0;
+	static unsigned char ch = 0;
 
-	i = 0;
-	while (message[i] != '\0')
-	{
-		bit = 7;
-		while (bit >= 0)
-		{
-			if (message[i] & (1 << bit))
-				kill(target_pid, SIGUSR1);
-			else
-				kill(target_pid, SIGUSR2);
-			bit--;
-			usleep(400);
-		}
-		i++;
+    (void)context;
+
+	if (signal == SIGUSR1)
+		ch |= (1 << (7 - bit));
+	bit++;
+
+    if (bit == 8)
+    {
+		if (ch == '\0')
+			ft_printf("\n");
+		else
+			ft_printf("%c", ch);
+		bit = 0;
+		ch = 0;
 	}
-	bit = 7;
-	while (bit >= 0)
-	{
-		kill(target_pid, SIGUSR2);
-		usleep(400);
-		bit--;
-	}
+
+	kill(info->si_pid, SIGUSR1);
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	int	target_pid;
+	struct sigaction sa;
 
-	if (argc != 3)
-	{
-		ft_printf("Usage: ./client <PID> <message>\n");
-		return (1);
-	}
-	target_pid = atoi(argv[1]);
-	if (target_pid <= 0)
-	{
-		ft_printf("Invalid PID\n");
-		return (1);
-	}
-	send_char(target_pid, argv[2]);
+	sa.sa_flags = SA_SIGINFO;
+	sa.sa_sigaction = handle_signal;
+	sigemptyset(&sa.sa_mask);
+
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
+
+	ft_printf("Server PID: %d\n", getpid());
+
+	while (1)
+		pause();
 	return (0);
 }
