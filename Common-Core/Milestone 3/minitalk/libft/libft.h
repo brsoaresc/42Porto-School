@@ -16,6 +16,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <stdarg.h>
+
+typedef struct s_list
+{
+    void            *content;
+    struct s_list   *next;
+} t_list;
 
 // Part1
 int		ft_isalpha(int ch);
@@ -64,23 +71,23 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 //printf
-int	ft_printf(const char *str, ...)
-int	put_placeholder(char type, va_list args)
-int	printf_putchar(char ch)
-int	printf_putstr(char *str)
-int	printf_putptr(unsigned long ptr)
-int	printf_address(unsigned long addr)
-int	printf_putnbr(int number)
-int	printf_putnbr_unsigned(unsigned int number)
-int	printf_putnbr_hex(unsigned int number, int lowercase)
+int	ft_printf(const char *str, ...);
+int	put_placeholder(char type, va_list args);
+int	printf_putchar(char ch);
+int	printf_putstr(char *str);
+int	printf_putptr(unsigned long ptr);
+int	printf_address(unsigned long addr);
+int	printf_putnbr(int number);
+int	printf_putnbr_unsigned(unsigned int number);
+int	printf_putnbr_hex(unsigned int number, int lowercase);
 //get_next_line
-char	*get_next_line(int fd)
-char	*gnl_read_file(int fd, char *new_str)
-char	*gnl_extract_line(char *str)
-char	*gnl_reset_str(char *str)
-int	gnl_strlen(char *str)
-char	*gnl_strchr(const char *str, int ch)
-void	*gnl_calloc(size_t nb, size_t size)
-char	*gnl_strjoin(char *l_line, char *buffer)
+char	*get_next_line(int fd);
+char	*gnl_read_file(int fd, char *new_str);
+char	*gnl_extract_line(char *str);
+char	*gnl_reset_str(char *str);
+int	gnl_strlen(char *str);
+char	*gnl_strchr(const char *str, int ch);
+void	*gnl_calloc(size_t nb, size_t size);
+char	*gnl_strjoin(char *l_line, char *buffer);
 
 #endif
