@@ -1,18 +1,16 @@
 SRCS_SERVER	= server.c
 SRCS_CLIENT	= client.c
-
-CC		= cc
-CFLAGS		= -Wall -Wextra -Werror
-RM		= rm -f
-
 OBJS_SERVER	= $(SRCS_SERVER:.c=.o)
 OBJS_CLIENT	= $(SRCS_CLIENT:.c=.o)
-
 SERVER		= server
 CLIENT		= client
 
 LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
+
+CC		= cc
+CFLAGS		= -Wall -Wextra -Werror
+RM		= rm -f
 
 all:		$(LIBFT) $(SERVER) $(CLIENT)
 
