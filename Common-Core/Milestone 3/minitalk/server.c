@@ -14,12 +14,12 @@
 #include <unistd.h>
 #include "libft/libft.h"
 
-void	handle_signal(int signal, siginfo_t *info, void *context)
+void	handle_signal(int signal, siginfo_t *info, void *extra)
 {
 	static int bit = 0;
 	static unsigned char ch = 0;
 
-    (void)context;
+    (void)extra;
 
 	if (signal == SIGUSR1)
 		ch |= (1 << (7 - bit));
