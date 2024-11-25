@@ -1,36 +1,45 @@
-NAME_CLIENT = client
-NAME_SERVER = server
+SRCS_SERVER	= server.c
+SRCS_CLIENT	= client.c
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC		= cc
+CFLAGS		= -Wall -Wextra -Werror
+RM		= rm -f
 
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
+OBJS_SERVER	= $(SRCS_SERVER:.c=.o)
+OBJS_CLIENT	= $(SRCS_CLIENT:.c=.o)
 
-SRC_CLIENT = client.c
-SRC_SERVER = server.c
-OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
-OBJ_SERVER = $(SRC_SERVER:.c=.o)
+SERVER		= server
+CLIENT		= client
 
-all: $(LIBFT) $(NAME_CLIENT) $(NAME_SERVER)
+LIBFT_DIR	= ./libft
+LIBFT		= $(LIBFT_DIR)/libft.a
 
-$(NAME_CLIENT): $(OBJ_CLIENT) $(LIBFT)
-	$(CC) $(CFLAGS) -o $(NAME_CLIENT) $(OBJ_CLIENT) $(LIBFT)
+all:		$(LIBFT) $(SERVER) $(CLIENT)
 
-$(NAME_SERVER): $(OBJ_SERVER) $(LIBFT)
-	$(CC) $(CFLAGS) -o $(NAME_SERVER) $(OBJ_SERVER) $(LIBFT)
+server:		$(LIBFT) $(SERVER)
+
+client:		$(LIBFT) $(CLIENT)
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+		@$(MAKE) -C $(LIBFT_DIR)
+
+$(SERVER):	$(OBJS_SERVER) $(LIBFT)
+		$(CC) $(CFLAGS) $^ -o $(SERVER)
+
+$(CLIENT):	$(OBJS_CLIENT) $(LIBFT)
+		$(CC) $(CFLAGS) $^ -o $(CLIENT)
+
+%.o: %.c
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ_CLIENT) $(OBJ_SERVER)
-	make clean -C $(LIBFT_DIR)
+		$(RM) $(OBJS_SERVER) $(OBJS_CLIENT)
+		@$(MAKE) clean -C $(LIBFT_DIR)
 
-fclean: clean
-	rm -f $(NAME_CLIENT) $(NAME_SERVER)
-	make fclean -C $(LIBFT_DIR)
+fclean:		clean
+		$(RM) $(SERVER) $(CLIENT)
+		@$(MAKE) fclean -C $(LIBFT_DIR)
 
-re: fclean all
+re:		fclean all
 
-.PHONY: all clean fclean re
+.PHONY:		all clean fclean re
