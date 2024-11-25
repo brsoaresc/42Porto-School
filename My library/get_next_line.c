@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include <unistd.h>
+#include "libft.h"
 
 char	*gnl_read_file(int fd, char *new_str)
 {
