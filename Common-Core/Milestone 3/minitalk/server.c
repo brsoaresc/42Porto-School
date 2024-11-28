@@ -40,14 +40,14 @@ void	handle_signal(int signal, siginfo_t *info, void *extra)
 
 int	main(void)
 {
-	struct sigaction sa;
+	struct sigaction sig;
 
-	sa.sa_flags = SA_SIGINFO;
-	sa.sa_sigaction = handle_signal;
-	sigemptyset(&sa.sa_mask);
+	sig.sa_flags = SA_SIGINFO;
+	sig.sa_sigaction = handle_signal;
+	sigemptyset(&sig.sa_mask);
 
-	sigaction(SIGUSR1, &sa, NULL);
-	sigaction(SIGUSR2, &sa, NULL);
+	sigaction(SIGUSR1, &sig, NULL);
+	sigaction(SIGUSR2, &sig, NULL);
 
 	ft_printf("Server PID: %d\n", getpid());
 
