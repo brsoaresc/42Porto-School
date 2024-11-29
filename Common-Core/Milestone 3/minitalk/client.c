@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 		ft_printf("Usage: ./client <server_pid> <message>\n");
 		return (1);
 	}
-	target_pid = atoi(argv[1]);
+	target_pid = ft_atoi(argv[1]);
 	if (target_pid <= 0)
 	{
 		ft_printf("Invalid PID\n");
