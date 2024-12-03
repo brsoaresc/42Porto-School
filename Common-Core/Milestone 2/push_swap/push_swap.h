@@ -20,7 +20,7 @@
 typedef struct s_node
 {
 	int		value;
-	struct s_node	*next;
+	struct s_node		*next;
 }	t_node;
 
 typedef struct s_stack
@@ -29,24 +29,23 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-//manipulação das pilhas
-t_stack		*ps_create_stack(void);
+//manipulação da pilha
+t_stack		ps_*create_stack(void);
 void		ps_free_stack(t_stack *stack);
 void		ps_push(t_stack *stack, int value);
 int			ps_pop(t_stack *stack);
-void		ps_swap(t_stack *stack);
-void		ps_rotate(t_stack *stack);
-void		ps_reverse_rotate(t_stack *stack);
-
-//operações entre as pilhas
-void		ps_push_to_stack(t_stack *src, t_stack *dest);
-
-//uteis
-int			ps_sorted(t_stack *stack);
-void		ps_print_stack(t_stack *stack);
+void		ps_swap(t_stack *stack);//sa, sb
+void		ps_rotate(t_stack *stack);//ra, rb
+void		ps_reverse_rotate(t_stack *stack);//rra, rrb
+void		ps_push_to_stack(t_stack *src, t_stack *dest);//pa, pb
+//funções auxiliares
+int			ps_is_sorted(t_stack *stack);
+void		ps_print_stack(t_stack *stack);//apenas para debug
 void		ps_error_exit(const char *message);
-
-//algoritmo
+//função principal
 void		ps_sort_stack(t_stack *stack_a, t_stack *stack_b);
+//auxiliares
+int			ps_find_min(t_stack *stack);
+void		ps_move_min_to_top(t_stack *stack);
 
 #endif
