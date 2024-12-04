@@ -16,8 +16,8 @@
 
 void	handle_signal(int signal)
 {
-	static int		bit;
-	static unsigned char	ch;
+	static int	bit;
+	static char	ch;
 
 	if (!ch)
 		ch = 0;
@@ -39,8 +39,8 @@ void	handle_signal(int signal)
 int	main(void)
 {
 	struct sigaction	sig;
-	pid_t			target_pid;
-	
+	pid_t				target_pid;
+
 	target_pid = getpid();
 	if (target_pid == -1)
 	{
