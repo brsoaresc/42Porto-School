@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <libft/libft.h>
 
 t_stack	*ps_create_stack(void)
