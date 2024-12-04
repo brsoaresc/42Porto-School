@@ -13,39 +13,25 @@
 #include <signal.h>
 #include "libft/libft.h"
 
-void	send_bit(int target_pid, unsigned char ch)
+static void	send_message(int target_pid, char *message)
 {
 	int	bit_position;
+	char	ch;
 
-	bit_position = 7;
-	while (bit_position >= 0)
+	while (*message)
 	{
-		if ((ch >> bit_position) & 1)
+		ch = *message;
+		bit_position = sizeof(char) * 8;
+		while (bit_position--)
 		{
-			ft_printf("Enviando SIGUSR2 (1) para PID %d\n", target_pid);
-			kill(target_pid, SIGUSR2);
+			if ((ch >> bit_position) & 1)
+				kill(target_pid, SIGUSR1);
+			else
+				kill(target_pid, SIGUSR2);
+			usleep(300);
 		}
-		else
-		{
-			ft_printf("Enviando SIGUSR1 (0) para PID %d\n", target_pid);
-			kill(target_pid, SIGUSR1);
-		}
-		usleep(300);
-		bit_position--;
+		message++;
 	}
-}
-
-void	send_message(int target_pid, const char *message)
-{
-	size_t		i;
-
-	i = 0;
-	while (message[i])
-	{
-		send_bit(target_pid, message[i]);
-		i++;
-	}
-	send_bit(target_pid, '\0');
 }
 
 int	main(int argc, char **argv)
@@ -55,9 +41,15 @@ int	main(int argc, char **argv)
 	if (argc != 3)
 	{
 		ft_printf("Usage: ./client <server_pid> <message>\n");
-		return (1);
+		exit (1);
 	}
 	target_pid = ft_atoi(argv[1]);
+	if (kill(target_pid, 0))
+	{
+		ft_printf("Invalid PID\n");
+		exit(1);
+	}
+	send_message(target_pid, "Client: ");
 	send_message(target_pid, argv[2]);
-	return (0);
+	send_message(target_pid, "\n");
 }
