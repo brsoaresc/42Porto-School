@@ -66,3 +66,10 @@ int	ps_pop(t_stack *stack)
 	stack->size--;
 	return (value);
 }
+
+void	ps_error_exit(const char *message)
+{
+	write(2, message, strlen(message));
+	write(2, "\n", 1);
+	exit(EXIT_FAILURE);
+}
