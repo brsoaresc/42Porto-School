@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <libft/libft.h>
 
 int	ps_find_min(t_stack *stack)
 {
