@@ -70,3 +70,19 @@ void	ps_push_to_stack(t_stack *src, t_stack *dest)
 	value = ps_pop(src);
 	ps_push(dest, value);
 }
+
+int	ps_sorted(t_stack *stack)
+{
+	t_node	*current;
+
+	if (stack->size < 2)
+		return (1);
+	current = stack->top;
+	while (current->next)
+	{
+		if (current->value > current->next->value)
+			return (0);
+		current = current->next;
+	}
+	return (1);
+}
