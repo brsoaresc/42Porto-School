@@ -15,7 +15,7 @@
 
 static void	send_message(int target_pid, char *message)
 {
-	int	bit_position;
+	int		bit_position;
 	char	ch;
 
 	while (*message)
