@@ -19,8 +19,8 @@
 
 typedef struct s_node
 {
+	s_node	*next;	
 	int		value;
-	struct s_node		*next;
 }	t_node;
 
 typedef struct s_stack
