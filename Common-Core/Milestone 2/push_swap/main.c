@@ -12,22 +12,6 @@
 
 #include <libft/libft.h>
 
-int	ps_sorted(t_stack *stack)
-{
-	t_node	*current;
-
-	if (stack->size < 2)
-		return (1);
-	current = stack->top;
-	while (current->next)
-	{
-		if (current->value > current->next->value)
-			return (0);
-		current = current->next;
-	}
-	return (1);
-}
-
 void	ps_print_stack(t_stack *stack)
 {
 	t_node	*current;
@@ -41,9 +25,20 @@ void	ps_print_stack(t_stack *stack)
 	ft_printf("---\n");
 }
 
-void	ps_error_exit(const char *message)
+int	main(void)
 {
-	write(2, message, strlen(message));
-	write(2, "\n", 1);
-	exit(EXIT_FAILURE);
+	t_stack	*a;
+	t_stack	*b;
+
+	a = create_stack();
+	b = create_stack();
+	push(a, 3);
+	push(a, 2);
+	push(a, 1);
+	print_stack(a);
+	swap(a);
+	print_stack(a);
+	free_stack(a);
+	free_stack(b);
+	return (0);
 }
