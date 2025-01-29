@@ -28,7 +28,7 @@ static void	send_message(int target_pid, char *message)
 				kill(target_pid, SIGUSR1);
 			else
 				kill(target_pid, SIGUSR2);
-			usleep(300);
+			usleep(500);
 		}
 		message++;
 	}
@@ -49,7 +49,11 @@ int	main(int argc, char **argv)
 		ft_printf("Invalid PID\n");
 		exit(1);
 	}
-	send_message(target_pid, "Client: ");
 	send_message(target_pid, argv[2]);
-	send_message(target_pid, "\n");
+	while (i < 8)
+	{
+		kill(target_pid, SIGUSR2);
+		usleep(300);
+		i++;
+	}
 }
