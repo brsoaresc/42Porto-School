@@ -16,7 +16,7 @@ int	ft_atoi_ps(const char *str, t_stacks *stack)
 {
 	int	i;
 	int	sig;
-	int	res;
+	long	res;
 
 	i = 0;
 	sig = 1;
@@ -31,12 +31,11 @@ int	ft_atoi_ps(const char *str, t_stacks *stack)
 	}
 	while (str[i])
 	{
-		if (res > INT_MAX / 10
-			|| (res == INT_MAX / 10 && (str[i] - '0') > INT_MAX % 10))
-			cleanup_and_exit(stack, "Error\n");
 		if (!(str[i] >= '0' && str[i] <= '9'))
 			cleanup_and_exit(stack, "Error\n");
 		res = res * 10 + (str[i++] - '0');
+		if ((sig == 1 && res > INT_MAX) || (sig == -1 && -res < INT_MIN))
+			cleanup_and_exit(stack, "Error\n");
 	}
-	return (res * sig);
+	return ((int)(res * sig));
 }
