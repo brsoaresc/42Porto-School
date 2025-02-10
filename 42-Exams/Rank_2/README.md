@@ -23,9 +23,9 @@ Can be any of the 12 Functions/Programs Below:
 11. [search_and_replace](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_1/search_and_replace.c)
 12. [ulstr](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_1/ulstr.c)
 
+
 ### Level 2
 Can be any of the 22 Functions/Programs Below:
-<table><tr><td>
   
 1. [alpha_mirror](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_2/alpha_mirror.c)
 2. [camel_to_snake](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_2/camel_to_snake.c)
@@ -49,11 +49,10 @@ Can be any of the 22 Functions/Programs Below:
 20. [swap_bits](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_2/swap_bits.c)
 21. [union](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_2/union.c)
 22. [wdmatch](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_2/wdmatch.c)
-</td></tr></table>
+
 
 ### Level 3
 Can be any of the 15 Functions/Programs Below:
-<table><tr><td>
   
 1. [add_prime_sum](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_3/add_prime_sum.c)
 2. [epur_str](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_3/epur_str.c)
@@ -70,11 +69,10 @@ Can be any of the 15 Functions/Programs Below:
 13. [rstr_capitalizer](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_3/rstr_capitalizer.c)
 14. [str_capitalizer](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_3/str_capitalizer.c)
 15. [tab_mult](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_3/tab_mult.c)
-</td></tr></table>
+
 
 ### Level 4
 Can be any of the 10 Functions/Programs Below:
-<table><tr><td>
   
 1. [flood_fill](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_4/flood_fill)
 2. [fprime](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_4/fprime.c)
@@ -86,6 +84,5 @@ Can be any of the 10 Functions/Programs Below:
 8. [rostring](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_4/rostring.c)
 9. [sort_int_tab](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/main/Rank_2/Level_4/sort_int_tab.c)
 10. [sort_list](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_4/sort_list)
-</td></tr></table>
 
 <br>
