@@ -6,9 +6,9 @@
 - If you fail the exam, when you retake the exam again, you will restart at Level 1.
 - There is <ins>**No Norminette**</ins> in this exam.
 
-### :one: Level 1
+
+### Level 1
 Can be any of the 12 Functions/Programs Below:
-<table><tr><td>
   
 1. [first_word](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_1/first_word.c)
 2. [fizzbuzz](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_1/fizzbuzz.c)
@@ -22,9 +22,8 @@ Can be any of the 12 Functions/Programs Below:
 10. [rotone](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_1/rotone.c)
 11. [search_and_replace](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_1/search_and_replace.c)
 12. [ulstr](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_1/ulstr.c)
-</td></tr></table>
 
-### :two: Level 2
+### Level 2
 Can be any of the 22 Functions/Programs Below:
 <table><tr><td>
   
@@ -52,7 +51,7 @@ Can be any of the 22 Functions/Programs Below:
 22. [wdmatch](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_2/wdmatch.c)
 </td></tr></table>
 
-### :three: Level 3
+### Level 3
 Can be any of the 15 Functions/Programs Below:
 <table><tr><td>
   
@@ -73,7 +72,7 @@ Can be any of the 15 Functions/Programs Below:
 15. [tab_mult](https://github.com/brsoaresc/42Porto-School/blob/main/42-Exams/Rank_2/Level_3/tab_mult.c)
 </td></tr></table>
 
-### :four: Level 4
+### Level 4
 Can be any of the 10 Functions/Programs Below:
 <table><tr><td>
   
