@@ -35,21 +35,23 @@ $*/
 #include <stdio.h>
 #include <stdlib.h>
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
-	int	i = 1;
-	int	number = atoi(av[1]);
+	int	i;
+	int	number;
 
-	if (ac == 2)
+	i = 1;
+	number = atoi(argv[1]);
+	if(argc == 2)
 	{
-		if (number == 1)
+		if(number == 1)
 			printf("1");
-		while (number >= ++i)
+		while(number >= ++i)
 		{
-			if (number % i == 0)
+			if(number % i == 0)
 			{
 				printf("%d", i);
-				if (number == i)
+				if(number == i)
 					break;
 				printf("*");
 				number /= i;
