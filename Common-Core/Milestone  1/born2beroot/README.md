@@ -8,7 +8,7 @@
 
 <br clear="both">
 
-<p align="left">When following the guide, create the VM with 8GB instead of 12GB as mentioned; this way, the partitions will have the correct size shown in the subject screenshot, avoiding issues.<br><br>*Guide: https://github.com/gemartin99/Born2beroot-Tutorial.git<br>https://github.com/curtyraissa/born2beroot.git</p>
+<p align="left">When following the guide, create the VM with 8GB instead of 12GB as mentioned; this way, the partitions will have the correct size shown in the subject screenshot, avoiding issues.<br><br>
 
 ###
 
