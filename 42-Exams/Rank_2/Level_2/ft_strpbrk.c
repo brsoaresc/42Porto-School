@@ -14,22 +14,23 @@ char	*ft_strpbrk(const char *s1, const char *s2);
 
 // strpbrk: Encontra o primeiro caractere correspondente.
 
-#include <string.h>
+#include <stdlib.h>
 
-char	*ft_strpbrk(const char *s1, const char *s2)
-{
-	int	i;
+char    *ft_strpbrk(const char *s1, const char *s2)
+{       
+        int     i;
+        int     j;
 
-	while(*s1)
-	{
-		i = 0;
-		while (s2[i])
-		{
-			if(s2[i] == *s1)
-				return ((char *)s1);
-			i++;
-		}
-		s1++;
-	}
-	return (NULL);
+        i = 0;
+        while(s1[i])
+        {
+                while(s2[j])
+                {
+                        if(s2[j] == s1[i])
+                                return (s1[i]);
+                        j++;
+                }
+                i++;
+        }
+        return (NULL);
 }
