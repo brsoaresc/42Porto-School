@@ -16,6 +16,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 // Part1
 int		ft_isalpha(int ch);
@@ -41,6 +52,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t max_n);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t number, size_t size);
 char	*ft_strdup(const char *str);
+int		ft_strcmp(const char *s1, const char *s2);
 // Part2
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -54,6 +66,8 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 //bonus
+int		ft_count_substr(char const *str, char ch);
+long	ft_atol(const char *str);
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
@@ -64,23 +78,25 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 //printf
-int	ft_printf(const char *str, ...)
-int	put_placeholder(char type, va_list args)
-int	printf_putchar(char ch)
-int	printf_putstr(char *str)
-int	printf_putptr(unsigned long ptr)
-int	printf_address(unsigned long addr)
-int	printf_putnbr(int number)
-int	printf_putnbr_unsigned(unsigned int number)
-int	printf_putnbr_hex(unsigned int number, int lowercase)
+int		ft_printf(const char *str, ...);
+int		put_placeholder(char type, va_list args);
+int		printf_putchar(char ch);
+int		printf_putstr(char *str);
+int		printf_putptr(unsigned long ptr);
+int		printf_address(unsigned long addr);
+int		printf_putnbr(int number);
+int		printf_putnbr_unsigned(unsigned int number);
+int		printf_putnbr_hex(unsigned int number, int lowercase);
 //get_next_line
-char	*get_next_line(int fd)
-char	*gnl_read_file(int fd, char *new_str)
-char	*gnl_extract_line(char *str)
-char	*gnl_reset_str(char *str)
-int	gnl_strlen(char *str)
-char	*gnl_strchr(const char *str, int ch)
-void	*gnl_calloc(size_t nb, size_t size)
-char	*gnl_strjoin(char *l_line, char *buffer)
+char	*get_next_line(int fd);
+char	*gnl_read_file(int fd, char *new_str);
+char	*gnl_extract_line(char *str);
+char	*gnl_reset_str(char *str);
+int		gnl_strlen(char *str);
+char	*gnl_strchr(const char *str, int ch);
+void	*gnl_calloc(size_t nb, size_t size);
+char	*gnl_strjoin(char *l_line, char *buffer);
+void	gnl_free_data(char *buffer, char *str);
+char	*gnl_strndup(char *s, int len);
 
 #endif
