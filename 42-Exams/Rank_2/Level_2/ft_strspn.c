@@ -16,26 +16,28 @@ size_t	ft_strspn(const char *s, const char *accept);
 
 #include <stddef.h>
 
-char	*ft_strchr(const char *str, char c)
-{
-	while(*str == c)
-	{
-		if(*str == c)
-			return ((char *)str);
-		str++;
-	}
-	return (0);
-}
-
 size_t ft_strspn(const char *s, const char *accept)
 {
-	int	i;
+	size_t	i = 0;
+	size_t	j;
+	int	found;
 
-	while(s[i])
+	while (s[i])
 	{
-		if (ft_strchr(accept, s[i]) == 0)
-			break;
+		j = 0;
+		found = 0;
+		while (accept[j])
+		{
+			if (s[i] == accept[j])
+			{
+				found = 1;
+				break;
+			}
+			j++;
+		}
+		if (!found)
+			return i;
 		i++;
 	}
-	return(i);
+	return i;
 }
