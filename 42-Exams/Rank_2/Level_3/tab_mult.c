@@ -41,7 +41,6 @@ $>*/
 
 void	ft_putnbr(int n)
 {
-	long	num = n;
 	char	ch;
 
 	if (n > 9)
