@@ -11,7 +11,7 @@
 ###
 
 <p align="left">
-1. <strong>Deadlock Prevention</strong><br><br>
+1. <strong>Deadlock Prevention</strong><br>
 - Strategy to prevent all philosophers grabbing forks simultaneously<br>
 - Resource ordering to prevent circular wait<br><br>
 2. <strong>Starvation Control</strong><br>
@@ -37,11 +37,9 @@
 • <strong>Fork Acquisition Algorithm</strong>:<br>
 - Even-numbered philosophers: left fork first<br>
 - Odd-numbered philosophers: right fork first<br><br>
-
 • <strong>Monitoring System</strong>:<br>
 - Constant health checks<br>
 - Early termination when meal targets met<br><br>
-
 • <strong>Logging System</strong>:<br>
 - Dedicated mutex for print operations<br>
 - Atomic state messages</p>
