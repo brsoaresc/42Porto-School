@@ -2,15 +2,7 @@
 
 ###
 
-<p align="left">The Philosophers project is a classic concurrent programming challenge that simulates the dining philosophers problem using threads and mutexes. This project focuses on synchronization, resource sharing, and preventing deadlocks in a multi-threaded environment.</p>
-
-###
-
-<h2 align="left">Project Components</h2>
-
-###
-
-<p align="left">- Implement philosopher threads that alternate between states (eating, thinking, sleeping)<br>- Manage shared resources (forks) using mutexes<br>- Monitor philosopher states to prevent starvation and deadlocks<br>- Ensure precise timing for state changes and death detection<br><br>**Core Structures**<br>• t_data: Contains simulation parameters and synchronization primitives<br>• t_philo: Represents each philosopher with their state and timing information<br><br>**Key Operations**<br>• Fork acquisition/release<br>• State transitions with proper timing<br>• Health monitoring</p>
+<p align="left">The Philosophers project is a classical simulation of the "Dining Philosophers Problem," which demonstrates synchronization challenges in concurrent systems. In this implementation, each philosopher is represented by a thread that alternates between eating, thinking, and sleeping states while competing for shared resources (forks) around a circular table.</p>
 
 ###
 
@@ -18,15 +10,58 @@
 
 ###
 
-<p align="left">1. Synchronization:<br><br>- Preventing deadlocks when all philosophers try to acquire forks simultaneously<br>- Avoiding race conditions in shared resource access<br>- Ensuring fair fork distribution to prevent starvation<br><br><br>2. Timing Precision:<br><br>- Maintaining accurate timing for eating/sleeping durations<br>- Detecting deaths within strict 10ms tolerance<br>- Implementing precise usleep without overshooting</p>
+<p align="left">
+1. <strong>Deadlock Prevention</strong><br><br>
+- Strategy to prevent all philosophers grabbing forks simultaneously<br>
+- Resource ordering to prevent circular wait<br><br>
+
+2. <strong>Starvation Control</strong><br><br>
+- Ensuring fair eating opportunities<br>
+- Implementing fair fork acquisition logic<br><br>
+
+3. <strong>Time Synchronization</strong><br><br>
+- Precise timing for state changes<br>
+- Death detection within 10ms tolerance<br><br>
+
+4. <strong>Resource Management</strong><br><br>
+- Proper memory allocation/deallocation<br>
+- Correct mutex initialization/destruction<br><br>
+
+5. <strong>Synchronized Output</strong><br><br>
+- Race-condition-free logging<br>
+- Atomic message printing</p>
 
 ###
 
-<h2 align="left">Technical Implementation</h2>
+<h2 align="left">Implemented Solutions</h2>
 
 ###
 
-<p align="left">- Uses pthreads for philosopher threads<br>- Implements mutexes for fork protection and state synchronization<br>- Employs a monitoring system to check philosopher health<br>- Features deadlock prevention through staggered fork acquisition<br>- Includes memory leak-free implementation (Valgrind-checked)</p>
+<p align="left">
+• <strong>Fork Acquisition Algorithm</strong>:<br>
+- Even-numbered philosophers: left fork first<br>
+- Odd-numbered philosophers: right fork first<br><br>
+
+• <strong>Monitoring System</strong>:<br>
+- Constant health checks<br>
+- Early termination when meal targets met<br><br>
+
+• <strong>Logging System</strong>:<br>
+- Dedicated mutex for print operations<br>
+- Atomic state messages</p>
+
+###
+
+<h2 align="left">Quality Metrics</h2>
+
+###
+
+<p align="left">
+✔ Zero memory leaks (Valgrind-verified)<br>
+✔ No race conditions (Helgrind-checked)<br>
+✔ 10ms timing precision<br>
+✔ Norminette-compliant code<br>
+✔ Efficient resource management</p>
 
 ###
 
@@ -36,6 +71,8 @@
 
 <p align="left">```bash
 ./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_meals]
-```<br><br>Example:<br>```bash
+```<br><br>
+Example:<br>
+```bash
 ./philo 5 800 200 200 7
 ```</p>
