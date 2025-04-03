@@ -14,20 +14,16 @@
 1. <strong>Deadlock Prevention</strong><br><br>
 - Strategy to prevent all philosophers grabbing forks simultaneously<br>
 - Resource ordering to prevent circular wait<br><br>
-
-2. <strong>Starvation Control</strong><br><br>
+2. <strong>Starvation Control</strong><br>
 - Ensuring fair eating opportunities<br>
 - Implementing fair fork acquisition logic<br><br>
-
-3. <strong>Time Synchronization</strong><br><br>
+3. <strong>Time Synchronization</strong><br>
 - Precise timing for state changes<br>
 - Death detection within 10ms tolerance<br><br>
-
-4. <strong>Resource Management</strong><br><br>
+4. <strong>Resource Management</strong><br>
 - Proper memory allocation/deallocation<br>
 - Correct mutex initialization/destruction<br><br>
-
-5. <strong>Synchronized Output</strong><br><br>
+5. <strong>Synchronized Output</strong><br>
 - Race-condition-free logging<br>
 - Atomic message printing</p>
 
