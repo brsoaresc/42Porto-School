@@ -6,14 +6,6 @@
 
 ###
 
-<h2 align="left">Purpose</h2>
-
-###
-
-<p align="left">Create a C program that simulates philosophers alternating between eating, thinking, and sleeping while sharing forks.<br>This project teaches fundamental concepts of thread synchronization, mutex usage, and deadlock prevention in concurrent systems.</p>
-
-###
-
 <h2 align="left">Project Components</h2>
 
 ###
